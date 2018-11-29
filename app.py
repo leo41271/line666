@@ -38,7 +38,7 @@ def handle_message(event):
 
 def Reply(text):
 	if text =="h1" :
-		return TextSendMessage(text = "hello")
+		return "hello"
 
 import os
 if __name__ == "__main__":
