@@ -29,6 +29,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
+#github.com/54bp6cl6
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
