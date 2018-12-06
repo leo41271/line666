@@ -35,7 +35,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     try:
-        Button()
+        Button(event)
         #Reply(event)181206
         '''181129
         message = TextSendMessage(text = Reply(event.message.text))
@@ -44,7 +44,6 @@ def handle_message(event):
     except Exception as e:
         line_bot_api.reply_message(event.reply_token,
                                    TextSendMessage(text=str(e)))
-
 def Button(event):
     message = TemplateSendMessage(
         alt_text='Buttons template',
