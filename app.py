@@ -35,7 +35,8 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     try:
-        Reply(event)
+        Button():
+        #Reply(event)181206
         '''181129
         message = TextSendMessage(text = Reply(event.message.text))
         line_bot_api.reply_message(event.reply_token, message)
@@ -43,6 +44,29 @@ def handle_message(event):
     except Exception as e:
         line_bot_api.reply_message(event.reply_token,
                                    TextSendMessage(text=str(e)))
+
+def Button:
+     message = TemplateSendMessage(
+            alt_text='Buttons template',
+            template=ButtonsTemplate(
+            thumbnail_image_url='https://example.com/image.jpg',
+            title='Menu',
+            text='Please select',
+            actions=[
+                PostbackTemplateAction(
+                    label='postback',
+                    text='postback text',
+                    data='action=buy&itemid=1'
+                ),
+                MessageTemplateAction(
+                    label='message',
+                    text='message text'
+                ),
+                URITemplateAction(
+                    label='uri',
+                    uri='http://example.com/'
+                )]))
+'''
 def KeyWord(text):
     KeyWordDict = {"140GF":"140GF4man",
                    "monk":"monkmonk",
@@ -58,7 +82,7 @@ def Reply(event):
                                    TextSendMessage(text= Ktemp[1]))
     else:
         line_bot_api.reply_message(event.reply_token,
-                                   TextSendMessage(text= event.message.text))
+                                   TextSendMessage(text= event.message.text))'''181206
 '''181129
 def Reply(text):
     if text =="h1" :
@@ -66,7 +90,6 @@ def Reply(text):
     else:
         return text
 '''
-
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
