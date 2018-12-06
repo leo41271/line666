@@ -44,6 +44,8 @@ def handle_message(event):
 def Reply(text):
     if text =="h1" :
         return "hello"
+    else:
+        return text
 
 import os
 if __name__ == "__main__":
