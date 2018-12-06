@@ -82,7 +82,7 @@ def Reply(event):
                                    TextSendMessage(text= Ktemp[1]))
     else:
         line_bot_api.reply_message(event.reply_token,
-                                   TextSendMessage(text= event.message.text))'''181206
+                                   TextSendMessage(text= event.message.text))181206'''
 '''181129
 def Reply(text):
     if text =="h1" :
