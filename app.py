@@ -36,7 +36,7 @@ def callback():
 def handle_message(event):
     try:
         Button(event)
-        #Reply(event)181206
+        Reply(event)#181206
         '''181129
         message = TextSendMessage(text = Reply(event.message.text))
         line_bot_api.reply_message(event.reply_token, message)
