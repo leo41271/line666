@@ -52,7 +52,7 @@ def KeyWord(text):
             return[True,KeyWordDict[k]]
     return [False]
 def Reply(event):
-    Ktemp = Keyword(event.message.text)
+    Ktemp = KeyWord(event.message.text)
     if Ktemp[0]:
         line_bot_api.reply_message(event.reply_token,
                                    TextSendMessage(text= Ktemp[1]))
