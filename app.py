@@ -65,7 +65,7 @@ def Button(event):
                 label='uri',
                 uri='http://example.com/'
             )]))
-    line_bot_api.reply_message(event.reply_token, message)
+    line_bot_api.reply_message(event.reply_token, message)#https://yaoandy107.github.io/line-bot-tutorial/
 '''
 def KeyWord(text):
     KeyWordDict = {"140GF":"140GF4man",
