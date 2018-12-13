@@ -29,7 +29,7 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-#github.com/54bp6cl6
+#github.com/54bp6cl6   lineBot+python 輕鬆建立聊天機器人
 #notepad++
 #Sublime
 #關鍵字系統
@@ -71,19 +71,25 @@ def Button(event):
 
 #回覆函式
 def Reply(event):
-    Ktemp = KeyWord(event)
-    if Ktemp[0]:
-        line_bot_api.reply_message(event.reply_token,
-            TextSendMessage(text = Ktemp[1]))
+    tempText = event.message.text.split(",")
+    if tempText[0] == "發送" and event.source.user_id == "U5a31f0fbc499eb0ac738b9a2f9b56743":
+        line_bot_api.push_message(tempText[1], TextSendMessage(text=tempText[2]))
     else:
-        line_bot_api.reply_message(event.reply_token,
-            Button(event))
+        Ktemp = KeyWord(event)
+        if Ktemp[0]:
+            line_bot_api.reply_message(event.reply_token,
+                TextSendMessage(text = Ktemp[1]))
+        else:
+            line_bot_api.reply_message(event.reply_token,
+                Button(event))
 
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     try:
         Reply(event)
+        line_bot_api.push_message("U5a31f0fbc499eb0ac738b9a2f9b56743", TextSendMessage(text=event.source.user_id))
+        line_bot_api.push_message("U5a31f0fbc499eb0ac738b9a2f9b56743", TextSendMessage(text=event.message.text))
     except Exception as e:
         line_bot_api.reply_message(event.reply_token, 
             TextSendMessage(text=str(e)))
@@ -95,6 +101,7 @@ def handle_postback(event):
     if command[0] == "還沒":
         line_bot_api.reply_message(event.reply_token, 
             TextSendMessage(text="還沒就趕快練習去~~~"))
+        line_bot_api.push_message(event.source.user_id, TextSendMessage(text=event.source.user_id))
 
 import os
 if __name__ == "__main__":
