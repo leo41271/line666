@@ -30,6 +30,8 @@ def callback():
         abort(400)
     return 'OK'
 #github.com/54bp6cl6
+#notepad++
+#Sublime
 #關鍵字系統
 def KeyWord(event):
     KeyWordDict = {"你好":"你也好啊",
