@@ -72,7 +72,7 @@ def Button(event):
 #回覆函式
 def Reply(event):
     tempText = event.message.text.split(",")
-    if tempText[0] == "發送" and event.source.user_id == "U5a31f0fbc499eb0ac738b9a2f9b56743":
+    if tempText[0] == "發送" and event.source.user_id == "Ud5b88eb647715e276c544bc43a9384b6":
         line_bot_api.push_message(tempText[1], TextSendMessage(text=tempText[2]))
     else:
         Ktemp = KeyWord(event)
@@ -88,8 +88,8 @@ def Reply(event):
 def handle_message(event):
     try:
         Reply(event)
-        line_bot_api.push_message("U5a31f0fbc499eb0ac738b9a2f9b56743", TextSendMessage(text=event.source.user_id))
-        line_bot_api.push_message("U5a31f0fbc499eb0ac738b9a2f9b56743", TextSendMessage(text=event.message.text))
+        line_bot_api.push_message("Ud5b88eb647715e276c544bc43a9384b6", TextSendMessage(text=event.source.user_id))
+        line_bot_api.push_message("Ud5b88eb647715e276c544bc43a9384b6", TextSendMessage(text=event.message.text))
     except Exception as e:
         line_bot_api.reply_message(event.reply_token, 
             TextSendMessage(text=str(e)))
