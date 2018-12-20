@@ -29,10 +29,12 @@ def callback():
     except InvalidSignatureError:
         abort(400)
     return 'OK'
-#github.com/54bp6cl6   lineBot+python 輕鬆建立聊天機器人
+#github.com/54bp6cl6   
+#lineBot+python 輕鬆建立聊天機器人
+#https://developers.line.biz/en/reference/messaging-api/#wh-sticker     https://developers.line.biz/media/messaging-api/sticker_list.pdf      stiker List
 #notepad++
 #Sublime
-#關鍵字系統
+#_______________________________________________________________________
 
 #關鍵字系統
 def Keyword(event):
